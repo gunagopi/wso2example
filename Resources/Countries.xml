@@ -1,0 +1,22 @@
+<Countries xmlns="http://com.example.CountryServices/Countries" xsi:schemaLocation="http://com.example.CountryServices/Countries Countries.xsd " xmlns:tns="http://com.example.CountryServices/Countries" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Country>
+      <Name>United Kingdom</Name>
+      <Capital>London</Capital>
+   </Country>
+   <Country>
+      <Name>India</Name>
+      <Capital>New Delhi</Capital>
+   </Country>
+   <Country>
+      <Name>Italy</Name>
+      <Capital>Rome</Capital>
+   </Country>
+   <Country>
+      <Name>Switzerland</Name>
+      <Capital>Bern</Capital>
+   </Country>
+   <Country>
+      <Name>France</Name>
+      <Capital>Paris</Capital>
+   </Country>
+</Countries>

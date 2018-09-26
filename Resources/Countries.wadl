@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="CountriesAPI"/>
+	<grammars>
+		<include href="Countries.xsd"/>
+	</grammars>
+  <resources base="http://localhost:8088/">
+    <resource path="Countries">
+		<doc xml:lang="en" title="Countries"/>
+    	<method name="GET" id="getCountries">
+	      <response>
+	         <representation mediaType="application/xml" element="Countries"/>
+	      </response>
+	    </method>
+   </resource>
+  </resources>  
+</application>

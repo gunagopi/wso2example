@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/CountryServices" name="CountriesAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/Countries">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="CountriesEP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log description="ResponseLog" level="full"/>
+            <filter xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xpath="boolean(//soapenv:Body/*[1])">
+                <then>
+                    <validate cache-schema="true">
+                        <schema key="gov:customdatamapper/Countries.xsd"/>
+                        <on-fail>
+                            <makefault version="soap11">
+                                <code value="soap11Env:VersionMismatch" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                                <reason value="InvalidResponseReceived"/>
+                            </makefault>
+                            <property name="HTTP_SC" scope="axis2" type="INTEGER" value="500"/>
+                            <respond/>
+                        </on-fail>
+                    </validate>
+                </then>
+                <else/>
+            </filter>
+            <xslt key="conf:customdatamapper/SortCountries.xslt"/>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <log description="FaultLog" level="custom">
+                <property name="message" value="Failed Invoking Target API"/>
+            </log>
+            <property name="HTTP_SC" scope="axis2" type="INTEGER" value="500"/>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

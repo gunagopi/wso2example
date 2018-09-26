@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Countries" groupId="com.example.CountryServices.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>Countries.xsd</file>
+            <path>/_system/governance/customdatamapper</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="SortCountries" groupId="com.example.CountryServices.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>SortCountries.xslt</file>
+            <path>/_system/config/customdatamapper</path>
+            <mediaType>application/xslt+xml</mediaType>
+        </item>
+    </artifact>
+</artifacts>

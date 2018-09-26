@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="513d7cb9-0ef9-4647-91e9-65f2bcc45f20" activeEnvironment="Default" name="CountryServices REST Project" soapui-version="5.1.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="9b07bed5-82ca-4a4c-92cd-e30046b92fd2" wadlVersion="http://wadl.dev.java.net/2009/02" name="CountriesAPI" type="rest" basePath="/" definitionUrl="file:/C:/Workouts/WSO2/Example/Countries.wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Workouts/WSO2/Example/Countries.wadl"><con:part><con:url>file:/C:/Workouts/WSO2/Example/Countries.wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="CountriesAPI"/>
+  <grammars>
+    <include href="Countries.xsd"/>
+  </grammars>
+  <resources base="http://localhost:8088/">
+    <resource path="Countries">
+      <doc xml:lang="en" title="Countries"/>
+      <method name="GET" id="getCountries">
+        <response>
+          <representation mediaType="application/xml" element="Countries"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part><con:part><con:url>file:\C:\Workouts\WSO2\Example\Countries.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://com.example.CountryServices/Countries" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://com.example.CountryServices/Countries" elementFormDefault="qualified">
+  <xs:element name="Countries" type="tns:CountriesType"/>
+  <xs:complexType name="CountriesType">
+    <xs:sequence>
+      <xs:element name="Country" type="tns:CountryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CountryType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="Capital" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8088</con:endpoint><con:endpoint>http://localhost:8280</con:endpoint></con:endpoints><con:resource name="Countries" path="CountryServices/Countries" id="55abd552-fd9c-492f-a466-23f093de220a"><con:settings/><con:parameters/><con:method name="GET - getCountries" id="bb1a8263-bc91-4234-af5b-a8f0f345d108" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:Countries</con:element><con:description xsi:nil="true"/></con:representation><con:request name="SampleRequest" id="cd5b770f-ac18-419e-9833-290f8bebd510" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8280</con:endpoint><con:request/><con:originalUri>http://localhost/Countries</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="CountriesProxy" path="services/CountriesProxy" id="55abd552-fd9c-492f-a466-23f093de220a"><con:settings/><con:parameters/><con:method name="GET - getCountries" id="bb1a8263-bc91-4234-af5b-a8f0f345d108" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:Countries</con:element><con:description xsi:nil="true"/></con:representation><con:request name="SampleRequest" id="cd5b770f-ac18-419e-9833-290f8bebd510" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8280</con:endpoint><con:request/><con:originalUri>http://localhost/Countries</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="CountriesMockCall" path="Countries" id="55abd552-fd9c-492f-a466-23f093de220a"><con:settings/><con:parameters/><con:method name="GET - getCountries" id="bb1a8263-bc91-4234-af5b-a8f0f345d108" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:Countries</con:element><con:description xsi:nil="true"/></con:representation><con:request name="SampleRequest" id="cd5b770f-ac18-419e-9833-290f8bebd510" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8088</con:endpoint><con:request/><con:originalUri>http://localhost/Countries</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="CountriesAPIGateway" path="gateway/1.0.0/Countries" id="55abd552-fd9c-492f-a466-23f093de220a"><con:settings/><con:parameters/><con:method name="GET - getCountries" id="bb1a8263-bc91-4234-af5b-a8f0f345d108" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:Countries</con:element><con:description xsi:nil="true"/></con:representation><con:request name="SampleRequest" id="cd5b770f-ac18-419e-9833-290f8bebd510" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer eefb2ca0-b33b-3426-b6c7-1ba703dc1f6c" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://localhost:8343</con:endpoint><con:request/><con:originalUri>http://localhost/Countries</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="CountriesProxyGateway" path="gatewayProxy/1.0.0/CountriesProxy" id="55abd552-fd9c-492f-a466-23f093de220a"><con:settings/><con:parameters/><con:method name="GET - getCountries" id="bb1a8263-bc91-4234-af5b-a8f0f345d108" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:ns="http://wadl.dev.java.net/2009/02">ns:Countries</con:element><con:description xsi:nil="true"/></con:representation><con:request name="SampleRequest" id="cd5b770f-ac18-419e-9833-290f8bebd510" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer eefb2ca0-b33b-3426-b6c7-1ba703dc1f6c" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://localhost:8343</con:endpoint><con:request/><con:originalUri>http://localhost/Countries</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:restMockService id="17b594c8-6cfe-4a05-9d24-b580a539d918" port="8088" path="/" host="localhost" name="CountriesAPIMock" docroot=""><con:settings/><con:properties/><con:restMockAction name="/Countries" method="GET" resourcePath="/Countries" id="d450e442-54d9-407e-a8c6-5309b53cce2c"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*
+// Script dispatcher is used to select a response based on the incoming request.
+// Here are few examples showing how to match based on path, query param, header and body
+
+// Match based on path
+def requestPath = mockRequest.getPath()
+log.info "Path: "+ requestPath
+
+if( requestPath.contains("json") )
+{
+    // return the name of the response you want to dispatch
+    return "JSON Response"
+}
+
+
+// Match based on query parameter
+def queryString = mockRequest.getRequest().getQueryString()
+log.info "QueryString: " + queryString
+
+if( queryString.contains("stockholm") )
+{
+    // return the name of the response you want to dispatch
+    return "Response Stockholm"
+}
+else if( queryString.contains("london") )
+{
+    // return the name of the response you want to dispatch
+    return "Response London"
+}
+
+
+// Match based on header
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList
+
+if( acceptEncodingHeaderList.contains("gzip,deflate") )
+{
+    // return the name of the response you want to dispatch
+    return "GZiped Response"
+}
+
+
+// Match based on body
+def requestBody = mockRequest.getRequestContent()
+log.info "Request body: " + requestBody
+
+if( requestBody.contains("some data") )
+{
+    // return the name of the response you want to dispatch
+    return "Response N"
+}
+*/
+</con:dispatchPath><con:response name="OK Response" id="923284f1-95d7-43e5-966a-794d539921d8" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<Countries xmlns="http://com.example.CountryServices/Countries" xsi:schemaLocation="http://com.example.CountryServices/Countries Countries.xsd " xmlns:tns="http://com.example.CountryServices/Countries" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Country>
+      <Name>United Kingdom</Name>
+      <Capital>London</Capital>
+   </Country>
+   <Country>
+      <Name>India</Name>
+      <Capital>New Delhi</Capital>
+   </Country>
+   <Country>
+      <Name>Italy</Name>
+      <Capital>Rome</Capital>
+   </Country>
+   <Country>
+      <Name>Switzerland</Name>
+      <Capital>Bern</Capital>
+   </Country>
+   <Country>
+      <Name>France</Name>
+      <Capital>Paris</Capital>
+   </Country>
+</Countries>]]></con:responseContent></con:response><con:response name="Empty Response" id="aa3a7374-73cf-41a8-bb02-8d92875ea39b" httpResponseStatus="200"><con:settings/><con:responseContent/></con:response><con:response name="Error Response" id="834742e3-5580-441b-b8e2-7a601645bc34" httpResponseStatus="400"><con:settings/><con:responseContent/></con:response><con:response name="EmptyList" id="c18881dc-e095-484b-b3e7-82b83e95ff08" httpResponseStatus="200"><con:settings/><con:responseContent>&lt;Countries xmlns="http://com.example.CountryServices/Countries" xsi:schemaLocation="http://com.example.CountryServices/Countries Countries.xsd " xmlns:tns="http://com.example.CountryServices/Countries" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+&lt;/Countries></con:responseContent></con:response><con:response name="InvalidXML" id="9928e5a2-0ef1-4343-8c40-df0d28225ad6" httpResponseStatus="200"><con:settings/><con:responseContent>&lt;Test>Invalid&lt;/Test></con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
